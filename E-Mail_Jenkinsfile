@@ -1,0 +1,49 @@
+pipeline {
+    agent any 
+    
+    tools{
+        jdk 'jdk11'
+        maven 'maven3'
+    }
+    
+    stages{
+
+        stage("Cleanup Workspace"){
+            steps{
+                cleanWs()
+            }
+        }
+        
+        stage("Git Checkout"){
+            steps{
+                git branch: 'master', changelog: false, poll: false, url: 'https://github.com/naresh9919/secretsanta-generator.git'
+            }
+        }
+        
+        stage("Compile"){
+            steps{
+                sh "mvn clean compile"
+            }
+        }
+        
+         stage("Test Cases"){
+            steps{
+                sh "mvn test"
+            }
+        }
+
+         stage("Build"){
+            steps{
+                sh " mvn clean install"
+            }
+        }
+    }
+    post{
+      success{
+        emailext attachLog: true, body: 'Email sent out from Jenkins', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'ynareshbabu1992@gmail.com'
+      }
+      failure{
+        emailext attachLog: true, body: 'Email sent out from Jenkins', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'ynareshbabu1992@gmail.com'
+      }
+    }
+}
