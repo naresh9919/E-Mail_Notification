@@ -1,0 +1,35 @@
+Plugins :
+Email Extension Template
+Email Extension
+Mailer Plugin
+
+
+E-mail Notification :
+SMTP server : smtp.gmail.com
+
+Use SMTP Authentication :
+User Name : ynareshbabu1991@gmail.com
+Password : yjgcppwdcerpyepm
+
+Use SSL : check
+Test configuration by sending test e-mail : ynareshbabu1991@gmail.com
+Test configuration
+
+Go to Gmail --> App passwords --> others (custom name) --> Jenkins --> Generate (copy the E-mail notification password)
+
+Extended E-mail Notification :
+
+SMTP server : smtp.gmail.com
+SMTP Port : 465
+Advanced  Credentials  add  
+User name : ynareshbabu1991@gmail.com
+Password : yjgcppwdcerpyepm
+
+Use SSL
+
+Default Content Type : HTML (text/html)
+
+
+Default Triggers : always or succuss 
+
+apply and save
