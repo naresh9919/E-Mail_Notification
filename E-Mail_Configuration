@@ -11,11 +11,11 @@ Use SMTP Authentication :
 User Name : ynareshbabu1991@gmail.com
 Password : yjgcppwdcerpyepm
 
+Go to Gmail --> App passwords --> others (custom name) --> Jenkins --> Generate (copy the E-mail notification password) (save some where)
+
 Use SSL : check
 Test configuration by sending test e-mail : ynareshbabu1991@gmail.com
 Test configuration
-
-Go to Gmail --> App passwords --> others (custom name) --> Jenkins --> Generate (copy the E-mail notification password)
 
 Extended E-mail Notification :
 
